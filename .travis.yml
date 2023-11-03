@@ -14,3 +14,10 @@ after_success:
   - docker build -t rxicurns/multi-nginx ./nginx
   - docker build -t rxicurns/multi-server ./server
   - docker build -t rxicurns/multi-worker ./worker
+  # Log in to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Take those images and push to dockerhub
+  - docker push rxicurns/multi-client
+  - docker push rxicurns/multi-nginx
+  - docker push rxicurns/multi-server
+  - docker push rxicurns/multi-worker
