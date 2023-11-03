@@ -1,0 +1,16 @@
+language: generic
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t rxicurns/react-test -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run -e CI=true rxicurns/react-test npm test
+
+after_success:
+  - docker build -t rxicurns/multi-client ./client
+  - docker build -t rxicurns/multi-nginx ./nginx
+  - docker build -t rxicurns/multi-server ./server
+  - docker build -t rxicurns/multi-worker ./worker
