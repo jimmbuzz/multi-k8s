@@ -21,3 +21,12 @@ after_success:
   - docker push rxicurns/multi-nginx
   - docker push rxicurns/multi-server
   - docker push rxicurns/multi-worker
+
+deploy:
+  - region: "us-east-2"
+  app: "multi-docker"
+  env: "Multi-docker-env"
+  bucket_name: "elasticbeanstalk-us-east-2-836874041365"
+  bucket_path: "multi-docker"
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
