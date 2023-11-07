@@ -27,7 +27,7 @@ provider: elasticbeanstalk
   region: us-east-2
   app: Multi-docker
   env: Multi-docker-env
-  bucket_name: "elasticbeanstalk-us-east-2-836874041365"
+  bucket_name: elasticbeanstalk-us-east-2-836874041365
   bucket_path: multi-docker
   on:
     branch: main
