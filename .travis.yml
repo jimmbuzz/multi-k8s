@@ -23,7 +23,7 @@ after_success:
   - docker push rxicurns/multi-worker
 
 deploy:
-  - region: "us-east-2"
+  region: "us-east-2"
   app: "multi-docker"
   env: "Multi-docker-env"
   bucket_name: "elasticbeanstalk-us-east-2-836874041365"
