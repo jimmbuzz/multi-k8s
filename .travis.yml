@@ -23,7 +23,7 @@ after_success:
   - docker push rxicurns/multi-worker
 
 deploy:
-provider: elasticbeanstalk
+  provider: elasticbeanstalk
   region: us-east-2
   app: Multi-docker
   env: Multi-docker-env
