@@ -1,11 +1,11 @@
-version: "3"
+version: '3'
 services:
   client:
-    image: "rxicurns/multi-client"
+    image: 'rxicurns/multi-client'
     mem_limit: 128m
     hostname: client
   server:
-    image: "rxicurns/multi-server"
+    image: 'rxicurns/multi-server'
     mem_limit: 128m
     hostname: api
     environment:
@@ -17,15 +17,15 @@ services:
       - PGPASSWORD=$PGPASSWORD
       - PGPORT=$PGPORT
   worker:
-    image: "rxicurns/multi-worker"
+    image: 'rxicurns/multi-worker'
     mem_limit: 128m
     hostname: worker
     environment:
       - REDIS_HOST=$REDIS_HOST
       - REDIS_PORT=$REDIS_PORT
   nginx:
-    image: "rxicurns/multi-nginx"
+    image: 'rxicurns/multi-nginx'
     mem_limit: 128m
     hostname: nginx
     ports:
-      - "80:80"
+      - '80:80'
